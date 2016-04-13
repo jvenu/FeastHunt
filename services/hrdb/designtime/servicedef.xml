@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="hrdb" type="DataService" springFile="hrdb.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.hrdb.User">
+            <element name="username" typeRef="java.lang.String" allowNull="true"/>
+            <element name="userid" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" allowNull="true"/>
+            <element name="tenantid" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.hrdb.Employee">
+            <element name="zip" typeRef="java.lang.String" allowNull="true"/>
+            <element name="department" typeRef="com.hrdb.Department" allowNull="true"/>
+            <element name="street" typeRef="java.lang.String" allowNull="true"/>
+            <element name="state" typeRef="java.lang.String" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" allowNull="true"/>
+            <element name="picurl" typeRef="java.lang.String" allowNull="true"/>
+            <element name="vacations" typeRef="com.hrdb.Vacation" isList="true" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" allowNull="true"/>
+            <element name="employeesForManagerid" typeRef="com.hrdb.Employee" isList="true" allowNull="true"/>
+            <element name="eid" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="employeeByManagerid" typeRef="com.hrdb.Employee" allowNull="true"/>
+            <element name="jobtitle" typeRef="java.lang.String" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" allowNull="true"/>
+            <element name="birthdate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" allowNull="true"/>
+            <element name="tenantid" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.hrdb.Vacation">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" allowNull="true"/>
+            <element name="tenantid" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employee" typeRef="com.hrdb.Employee" allowNull="true"/>
+            <element name="type" typeRef="java.lang.String" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.hrdb.Department">
+            <element name="budget" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="deptid" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="q2" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="location" typeRef="java.lang.String" allowNull="true"/>
+            <element name="q1" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="deptcode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="q4" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="q3" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" allowNull="true"/>
+            <element name="tenantid" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employees" typeRef="com.hrdb.Employee" isList="true" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

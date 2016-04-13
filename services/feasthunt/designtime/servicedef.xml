@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="feasthunt" type="DataService" springFile="feasthunt.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.feasthunt.feasthunt.Restaurant">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="address" typeRef="java.lang.String" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" allowNull="true"/>
+            <element name="picurl" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hrdb">
+  <class table="`EMPLOYEE`" name="com.hrdb.Employee" entity-name="com.hrdb.Employee" schema="PUBLIC">
+    <id name="eid" type="java.lang.Integer">
+      <column name="`EID`" length="255" not-null="true" precision="10"/>
+      <generator class="identity"/>
+    </id>
+    <property name="firstname" type="java.lang.String">
+      <column name="`FIRSTNAME`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="lastname" type="java.lang.String">
+      <column name="`LASTNAME`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="street" type="java.lang.String">
+      <column name="`STREET`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="city" type="java.lang.String">
+      <column name="`CITY`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="state" type="java.lang.String">
+      <column name="`STATE`" length="2" not-null="false" precision="19"/>
+    </property>
+    <property name="zip" type="java.lang.String">
+      <column name="`ZIP`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="birthdate" type="java.sql.Date">
+      <column name="`BIRTHDATE`" length="10" not-null="false" precision="19"/>
+    </property>
+    <property name="picurl" type="java.lang.String">
+      <column name="`PICURL`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="jobtitle" type="java.lang.String">
+      <column name="`JOBTITLE`" length="40" not-null="false" precision="19"/>
+    </property>
+    <property name="username" type="java.lang.String">
+      <column name="`USERNAME`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="password" type="java.lang.String">
+      <column name="`PASSWORD`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="role" type="java.lang.String">
+      <column name="`ROLE`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="tenantid" type="java.lang.Integer">
+      <column name="`TENANTID`" length="255" not-null="false" precision="10"/>
+    </property>
+    <many-to-one
+      name="department"
+      class="Department"
+      fetch="select">
+      <meta attribute="mapping-DEPTID">
+        DEPTID
+      </meta>
+      <column name="`DEPTID`" length="255" not-null="false" precision="10"/>
+    </many-to-one>
+    <many-to-one
+      name="employeeByManagerid"
+      class="Employee"
+      fetch="select">
+      <meta attribute="mapping-MANAGERID">
+        EID
+      </meta>
+      <meta attribute="ignore-properties">
+        &quot;employeeByManagerid&quot;, &quot;employeesForManagerid&quot;
+      </meta>
+      <column name="`MANAGERID`" length="255" not-null="false" precision="10"/>
+    </many-to-one>
+    <set name="employeesForManagerid" table="EMPLOYEE" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`MANAGERID`"/>
+      </key>
+      <one-to-many class="Employee"/>
+    </set>
+    <set name="vacations" table="VACATION" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`EMPID`"/>
+      </key>
+      <one-to-many class="Vacation"/>
+    </set>
+  </class>
+  <class table="`VACATION`" name="com.hrdb.Vacation" entity-name="com.hrdb.Vacation" schema="PUBLIC">
+    <id name="id" type="java.lang.Integer">
+      <column name="`ID`" length="255" not-null="true" precision="10"/>
+      <generator class="identity"/>
+    </id>
+    <property name="startdate" type="java.sql.Date">
+      <column name="`STARTDATE`" length="10" not-null="false" precision="19"/>
+    </property>
+    <property name="enddate" type="java.sql.Date">
+      <column name="`ENDDATE`" length="10" not-null="false" precision="19"/>
+    </property>
+    <property name="tenantid" type="java.lang.Integer">
+      <column name="`TENANTID`" length="255" not-null="false" precision="10"/>
+    </property>
+    <property name="status" type="java.lang.String">
+      <column name="`STATUS`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="type" type="java.lang.String">
+      <column name="`TYPE`" length="255" not-null="false" precision="19"/>
+    </property>
+    <many-to-one
+      name="employee"
+      class="Employee"
+      fetch="select">
+      <meta attribute="mapping-EMPID">
+        EID
+      </meta>
+      <column name="`EMPID`" length="255" not-null="true" precision="10"/>
+    </many-to-one>
+  </class>
+  <class table="`DEPARTMENT`" name="com.hrdb.Department" entity-name="com.hrdb.Department" schema="PUBLIC">
+    <id name="deptid" type="java.lang.Integer">
+      <column name="`DEPTID`" length="255" not-null="true" precision="10"/>
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="java.lang.String">
+      <column name="`NAME`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="budget" type="java.lang.Integer">
+      <column name="`BUDGET`" length="255" not-null="false" precision="10"/>
+    </property>
+    <property name="q1" type="java.lang.Integer">
+      <column name="`Q1`" length="255" not-null="false" precision="10"/>
+    </property>
+    <property name="q2" type="java.lang.Integer">
+      <column name="`Q2`" length="255" not-null="false" precision="10"/>
+    </property>
+    <property name="q3" type="java.lang.Integer">
+      <column name="`Q3`" length="255" not-null="false" precision="10"/>
+    </property>
+    <property name="q4" type="java.lang.Integer">
+      <column name="`Q4`" length="255" not-null="false" precision="10"/>
+    </property>
+    <property name="deptcode" type="java.lang.String">
+      <column name="`DEPTCODE`" length="20" not-null="false" precision="19"/>
+    </property>
+    <property name="location" type="java.lang.String">
+      <column name="`LOCATION`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="tenantid" type="java.lang.Integer">
+      <column name="`TENANTID`" length="255" not-null="false" precision="10"/>
+    </property>
+    <set name="employees" table="EMPLOYEE" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`DEPTID`"/>
+      </key>
+      <one-to-many class="Employee"/>
+    </set>
+  </class>
+  <class table="`USER`" name="com.hrdb.User" entity-name="com.hrdb.User" schema="PUBLIC">
+    <id name="userid" type="java.lang.Integer">
+      <column name="`USERID`" length="255" not-null="true" precision="10"/>
+      <generator class="identity"/>
+    </id>
+    <property name="username" type="java.lang.String">
+      <column name="`USERNAME`" length="20" not-null="false" precision="19"/>
+    </property>
+    <property name="password" type="java.lang.String">
+      <column name="`PASSWORD`" length="20" not-null="false" precision="19"/>
+    </property>
+    <property name="role" type="java.lang.String">
+      <column name="`ROLE`" length="20" not-null="false" precision="19"/>
+    </property>
+    <property name="tenantid" type="java.lang.Integer">
+      <column name="`TENANTID`" length="255" not-null="false" precision="10"/>
+    </property>
+  </class>
+</hibernate-mapping>

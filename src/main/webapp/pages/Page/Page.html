@@ -1,0 +1,53 @@
+<wm-page data-ng-controller="PagePageController" pagetitle="Page" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-livelist listclass="list-group" itemclass="list-group-item" template="true" dataset="bind:Variables.HrdbEmployeeData.dataSet" navigation="None" name="livelist1">
+                <wm-listtemplate layout="blank" name="listtemplate1">
+                    <wm-container class="blank" data-template-ctr="true" name="container1">
+                        <wm-layoutgrid class="gridlayout" name="layoutgrid1">
+                            <wm-gridrow name="gridrow1">
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn1">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.eid" name="label1"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn2">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.firstname" name="label2"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn3">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.lastname" name="label3"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn4">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.street" name="label4"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn5">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.city" name="label5"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn6">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.state" name="label6"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn7">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.zip" name="label7"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn8">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.birthdate" name="label8"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn9">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.picurl" name="label9"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn10">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.jobtitle" name="label10"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn class="col-xs-6" columnwidth="1" name="gridcolumn11">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.username" name="label11"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-livelist>
+            <wm-prefab prefabname="googlemaps" name="googlemaps1" locations="bind:Widgets.livelist1.selecteditem"></wm-prefab>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

@@ -28,10 +28,27 @@ var _MainPage_Variables_ ={};
     <wm-header content="header" name="header" height="auto"></wm-header>
     <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
     <wm-content name="content">
-        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+        <wm-page-content columnwidth="12" paddingleft="15" paddingright="15" name="mainContent">
+            <wm-livelist listclass="list-group" itemsperrow="4" template="true" dataset="bind:Variables.FeasthuntRestaurantData.dataSet" navigation="None" name="livelist1">
+                <wm-listtemplate layout="thumbnail" name="listtemplate1">
+                    <wm-tile marginbottom="1" marginleft="1" marginunit="em" marginright="1" margintop="1" name="tile1">
+                        <wm-layoutgrid name="layoutgrid1">
+                            <wm-gridrow paddingunit="em" name="gridrow1">
+                                <wm-gridcolumn paddingunit="em" paddingbottom="1" paddingright="1" paddingleft="1" paddingtop="1" columnwidth="12" name="gridcolumn1">
+                                    <wm-picture picturesource="bind:Variables.FeasthuntRestaurantData.dataSet.picurl" width="200px" name="Picture" height="200px"></wm-picture>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow borderleft="0" borderbottom="0" borderright="0" bordertop="1" borderstyle="solid" bordercolor="#f8f8f8" name="gridrow2">
+                                <wm-gridcolumn paddingunit="em" paddingbottom="1" paddingright="1" paddingleft="1" paddingtop="1" name="gridcolumn4" columnwidth="12">
+                                    <wm-label class="h4" width="100%" name="Title" caption="bind:Variables.FeasthuntRestaurantData.dataSet.name"></wm-label>
+                                    <wm-label class="text-muted" width="100%" name="Description" caption="bind:Variables.FeasthuntRestaurantData.dataSet.address"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-tile>
+                </wm-listtemplate>
+            </wm-livelist>
         </wm-page-content>
-        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>
     <wm-footer name="footer" content="footer"></wm-footer>
 </wm-page>

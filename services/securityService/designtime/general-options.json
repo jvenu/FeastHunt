@@ -1,0 +1,16 @@
+{
+  "enforceSecurity" : true,
+  "rememberMeConfig" : null,
+  "useSSL" : false,
+  "sslPort" : "8443",
+  "dataSourceType" : "DEMO",
+  "login" : {
+    "type" : "PAGE",
+    "pageName" : "Login",
+    "sessionTimeout" : {
+      "type" : "DIALOG",
+      "pageName" : null,
+      "timeoutValue" : 30
+    }
+  }
+}

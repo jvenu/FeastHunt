@@ -1,0 +1,800 @@
+/*START - Mellow-Yellow Theme*/
+
+.wm-app {
+
+  @import url("../../../components/bootstrap/less/bootstrap.less");
+  @import url("variables.less");
+
+  font-size: @font-size-base;
+  color: @text-color;
+  font-family: @font-family-base;
+  background-color: @body-bg;
+
+  //Variables
+  @wm-brand-default: #46555c;
+
+  //Gradient background normal variables
+  @start-header-color:  #FFC233;
+  @start-header-percentage: 5%;
+  @end-header-color: #FFB300;
+  @end-header-percentage: 100%;
+
+  .gradient-header {
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, @start-header-color), color-stop(1, @end-header-color));
+     background: -webkit-linear-gradient(top, @start-header-color @start-header-percentage, @end-header-color  @end-header-percentage);
+     background: -moz-linear-gradient(top, @start-header-color @start-header-percentage, @end-header-color @end-header-percentage);
+     background: -o-linear-gradient(top, @start-header-color @start-header-percentage, @end-header-color @end-header-percentage);
+     background: -ms-linear-gradient(top, @start-header-color @start-header-percentage, @end-header-color @end-header-percentage);
+     background: linear-gradient(to bottom, @start-header-color @start-header-percentage, @end-header-color @end-header-percentage);
+  }
+
+  //Gradient background normal variables
+  @start-color:  #fff;
+  @start-percentage: 5%;
+  @end-color: #e9e9e9;
+  @end-percentage: 100%;
+
+  .gradient-normal {
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, @start-color), color-stop(1, @end-color));
+     background: -webkit-linear-gradient(top, @start-color @start-percentage, @end-color  @end-percentage);
+     background: -moz-linear-gradient(top, @start-color @start-percentage, @end-color @end-percentage);
+     background: -o-linear-gradient(top, @start-color @start-percentage, @end-color @end-percentage);
+     background: -ms-linear-gradient(top, @start-color @start-percentage, @end-color @end-percentage);
+     background: linear-gradient(to bottom, @start-color @start-percentage, @end-color @end-percentage);
+  }
+
+  //Gradient Box-shadow normal variables
+  @gradient-box-shadow: inset 0 2px 0.5em 1px rgba(22, 25, 28, 0.3);
+
+  .gradient-box-shadow-normal {
+    -webkit-box-shadow: @gradient-box-shadow;
+    -moz-box-shadow: @gradient-box-shadow;
+    -ms-box-shadow: @gradient-box-shadow;
+    -o-box-shadow: @gradient-box-shadow;
+  }
+
+  //Gradient Box-shadow progress-bar
+  @gradient-box-shadow-progress: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  .gradient-box-shadow-progress {
+    -webkit-box-shadow: @gradient-box-shadow-progress;
+    -moz-box-shadow: @gradient-box-shadow-progress;
+    -ms-box-shadow: @gradient-box-shadow-progress;
+    -o-box-shadow: @gradient-box-shadow-progress;
+  }
+
+  //Header
+  @wm-header-border-color: rgba(0, 0, 0, 0.1);
+  @wm-header-text-color: @brand-primary;
+  @wm-header-bg-color: @brand-primary;
+  @wm-header-height: auto;
+
+  //Left Panel
+  @wm-left-panel-bg: #F5F6EA;
+  @wm-left-panel-list-border: 1px rgba(0, 0, 0, 0.0470588) solid;
+  @wm-left-panel-border-color: #CFDBE2;
+  @wm-left-panel-link-color: @brand-primary;
+  @wm-left-panel-link-hover-bg: @brand-primary;
+  @wm-left-panel-link-hover-text-color: #fff;
+  @wm-left-panel-link-hover-border-color: @brand-warning;
+  @wm-left-panel-dropdown-menu-bg: transparent;
+
+  //right panel
+  @wm-right-panel-border-color: #CFDBE2;
+  @wm-right-panel-bg: #F5F6EA;
+  @wm-right-panel-link-color: #fff;
+  @wm-right-panel-list-border: 1px rgba(0, 0, 0, 0.0470588) solid;
+
+  //Footer
+  @wm-footer-border-color: #ccc;
+  @wm-footer-text-color: #515253;
+  @wm-footer-bg-color: #F5F7FA;
+  @wm-footer-height: auto;
+
+  //Table
+  @table-header-bg: @brand-primary;
+
+  //Tabset
+  @nav-tabs-color-hover : @brand-primary;
+
+  //input group hover
+  @input-group-addon-hover-bg: #e7e7e7;
+
+  //Buttons
+  @btn-group-active-btn-bg: #fff;
+
+  //Modal
+  @modal-header-bg: @brand-warning;
+  @modal-header-color: #704E00;
+  @modal-header-border-color: #ccc;
+
+  //Ratings
+  @wm-rating-text-color: #333;
+  @wm-rating-hover-text-color: @brand-primary;
+    
+  .img-rounded {
+    border-radius: @thumbnail-border-radius;
+  }
+  /******Label: overiding the label class as bootstrap is making all the labels bold***/
+  label {
+    font-weight: normal;
+  }
+
+  /***Tabs Widget: Styling for the tabs widget comes here********/
+  //Tab Content
+  .tab-content {
+    .tab-body {
+      border-color: @nav-tabs-border-color;
+      padding: @padding-base-vertical @padding-base-horizontal;
+    }
+  }
+  //navigation
+  .nav-tabs {
+    border-bottom-color: @brand-primary;
+    > li {
+      margin-right: .2em;
+      > a, .app-menu a {
+        color: @text-color;
+        .gradient-normal; //background-color
+        border-bottom-color: transparent;
+        box-shadow: none;
+        border: 1px solid @nav-tabs-border-color;
+        text-transform: uppercase;
+        &:hover, &:focus, &:active {
+          color: @nav-tabs-color-hover;
+          .gradient-normal; //background-color
+          .gradient-box-shadow-normal; //box-shadow
+          border-color: 0.167em solid @nav-tabs-border-color;
+        }
+      }
+      &.active {
+        > a, .app-menu a {
+          border: 1px solid @nav-tabs-border-color;
+          color: @nav-tabs-active-link-hover-color;
+          background: @brand-primary;
+          &:hover ,&:focus {
+            border-color: @nav-tabs-border-color;
+            color: @nav-tabs-active-link-hover-color;
+            background: @brand-primary;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+/***Tabs Widget: Styling for the tabs widget comes here********/
+  .list-group-item-separator {
+    margin-bottom: 2px;
+    border-radius: 2px;
+    .form-group {
+      padding: 0 @padding-base-horizontal;
+    }
+  }
+
+  /***Button Style: Defining the sixe of the button for bootstrap classes********/
+  .btn {
+    text-transform: uppercase;
+    border-radius: 2px;
+    &.btn-lg {
+      font-size: 1.4em;
+    }
+    &.btn-xs {
+      padding: 0 0.5em;
+    }
+    .caret {
+      margin-left: 0.7em;
+    }
+  }
+
+
+  /***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
+  .modal-header {
+    background-color: @modal-header-bg;
+    border-bottom-color: @modal-header-border-color;
+    color: @modal-header-color;
+  }
+
+  //Breadcrumb
+  .breadcrumb {
+    li {
+      a {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  //Rating Widget
+  .app-ratings {
+    .rating-style > label {
+      color: @wm-rating-text-color;
+
+      &:hover, &:hover ~ label {
+        color: @wm-rating-hover-text-color;
+      }
+
+      &.active {
+        color: @wm-rating-hover-text-color;
+      }
+    }
+  }
+
+  //Progress Bar
+  .progress {
+    border-radius: 0;
+    box-shadow: none;
+    height: 1.667em;
+    .gradient-box-shadow-progress;
+  }
+
+  //Table
+  .table {
+    > thead {
+      > tr {
+        th {
+          background-color: @table-header-bg;
+          color: @component-active-color;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  /*****************************************************************************************************************************************/
+  /*********************************************************Layout**************************************************************************/
+  /*****************************************************************************************************************************************/
+  .app-content-column {
+    background-color: @body-bg;
+    padding: 1em;
+  }
+
+  //Header
+  .app-header, .app-mobile-header {
+    color: @wm-header-text-color;
+    .gradient-header;
+    border-bottom: 1px solid @wm-header-border-color;
+    height: @wm-header-height;
+    a {
+      color: @wm-header-text-color;
+    }
+
+    .app-mobile-header {
+      background-color: @navbar-default-bg;
+      color: @navbar-default-color;
+      a {
+        color: @navbar-default-color;
+      }
+    }
+    /*.nav {
+      > li {
+        > a {
+          &:hover {
+            color: @wm-header-color-hover;
+            background-color: darken(@brand-warning, 15%);
+          }
+        }
+      }
+    }*/
+  }
+  //Top Nav Bar
+  .app-navbar {
+    border-radius: 0;
+    .gradient-normal; //background-color
+    color: @navbar-default-color;
+    border-color: transparent;
+    .gradient-box-shadow-normal;//box-shadow
+
+    .navbar-nav {
+      li {
+        a {
+          font-size: 1em;
+          padding-left: 3em;
+          padding-right: 3em;
+          text-transform: uppercase;
+          font-weight: normal;
+          text-decoration: none;
+          word-spacing: .4em;
+          i {
+            margin-right: 0.417em;
+          }
+          &:hover, &:focus, &.active, &.app-popover-open  {
+            color: @navbar-default-link-hover-color;
+            .gradient-normal; //background-color
+            .gradient-box-shadow-normal;//box-shadow
+          }
+        }
+
+        > .dropdown .dropdown-menu {
+          margin: 0;
+          background-color: @navbar-default-bg;
+          a {
+            color: @brand-primary;
+            padding: 1.5em;
+            &:hover {
+              color: inherit;
+              background-color: @navbar-default-hover-bg;
+            }
+          }
+        }
+      }
+
+      .app-nav-item {
+        > .dropdown {
+          a.dropdown-toggle {
+            padding-left: 3em;
+            padding-right: 3em;
+            color: @brand-primary;
+            &:hover {
+              background-color: @navbar-default-hover-bg;
+            }
+          }
+        }
+        > .dropdown .dropdown-menu {
+          .gradient-normal; //background-color
+        }
+      }
+    }
+  }
+
+  //Left & Right Panels
+  .app-left-panel, .app-right-panel {
+    .nav {
+      li {
+        margin-top: 0;
+        border-bottom: @wm-left-panel-list-border;
+
+        a, .btn, .dropdown a, .dropdown a.dropdown-toggle {
+          font-size: 0.917em;
+          text-transform: uppercase;
+          letter-spacing: .025em;
+          font-weight: 400;
+          padding: 1em;
+          position: relative;
+          border-radius: 0;
+          line-height: 1.7;
+          color: @wm-left-panel-link-color;
+          border-left: 0.5em solid transparent;
+          transition: color .5s ease, background .5s ease;
+          -webkit-transition: color .5s ease, background .5s ease;
+          -moz-transition: color .5s ease, background .5s ease;
+          -ms-transition: color .5s ease, background .5s ease;
+          -o-transition: color .5s ease, background .5s ease;
+          &:hover {
+            color: @wm-left-panel-link-hover-text-color;
+            text-decoration: none;
+            background-color: @wm-left-panel-link-hover-bg;
+            border-left-color: transparent;
+            transition: color .5s ease, background .5s ease;
+            -webkit-transition: color .5s ease, background .5s ease;
+            -moz-transition: color .5s ease, background .5s ease;
+            -ms-transition: color .5s ease, background .5s ease;
+            -o-transition: color .5s ease, background .5s ease;
+          }
+          &.active {
+             background-color: @wm-left-panel-link-hover-bg;
+             border-left-color: @wm-left-panel-link-hover-border-color;
+             color: @wm-left-panel-link-hover-text-color;
+          }
+
+          .app-icon {
+            margin-left: 0.833em;
+            margin-right: 0.417em;
+          }
+        }
+
+        > .dropdown.open {
+          > .dropdown-menu {
+            position: relative;
+            padding: 0.833em 0;
+            margin: 0 0 1.333em;
+            border: 0;
+            border-bottom: @wm-left-panel-list-border;
+            box-shadow: none;
+            background-color: @wm-left-panel-dropdown-menu-bg;
+            li {
+              a {
+                padding: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+    .app-nav {
+      .app-nav-item {
+        > .dropdown {
+          > a {
+            padding: 1.333em;
+          }
+        }
+      }
+    }
+  }
+
+  //Left Panel
+  .app-left-panel {
+    background-color: @wm-left-panel-bg;
+    border-right: 1px solid @wm-left-panel-border-color;
+  }
+
+  //Right Panel
+  .app-right-panel {
+    background-color: @wm-right-panel-bg;
+    border-left: 1px solid @wm-right-panel-border-color;
+  }
+
+  //Footer
+  .app-footer {
+    padding: 1em 1.5em;
+    background-color: @wm-footer-bg-color;
+    color: @wm-footer-text-color;
+    border-top: 1px solid @wm-footer-border-color;
+    height: @wm-footer-height;
+  }
+
+  .btn-group {
+    .btn.active {
+      box-shadow: none;
+      background-color: @btn-group-active-btn-bg;
+      color: @text-color;
+    }
+  }
+
+  /******************************************************************************************************************************************/
+  /***************************************************Widgets styling************************************************************************/
+  /******************************************************************************************************************************************/
+  .form-group {
+    margin-bottom: 0.833em;
+  }
+  //for text, select controls
+  .form-control {
+    box-shadow: none;
+    &:focus {
+      border: 1px solid @input-border-focus;
+      box-shadow: none;
+    }
+    &:active {
+      border-color: @brand-info;
+    }
+  }
+  .form-control-static {
+    padding-bottom: 0;
+  }
+
+  //form widgets
+  .app-form, .app-liveform {
+    //for labels in the form
+    .control-label {
+      padding: @padding-base-vertical @padding-base-horizontal 0 @padding-base-horizontal;
+    }
+    //action buttons in the form
+    .form-action {
+      .btn {
+          //null
+      }
+    }
+
+    //Styling File Upload in IE
+    input[type="file"] {
+      padding: 0;
+      //Browse textbox
+      &::-ms-value {
+        border: 1px solid @input-border;
+        background-color: @input-bg;
+      }
+
+      //Browse button
+      &::-ms-browse {
+        border: 1px solid @input-border;
+      }
+    }
+  }
+
+  /***search widget****/
+  .app-search {
+    .input-group-addon {
+      &:hover {
+        background: @input-group-addon-hover-bg;
+      }
+    }
+  }
+
+  //switch button styles
+    .app-switch {
+      .btn-default {
+        .gradient-header;
+        color: @component-active-color;
+        border-color: darken(@brand-warning, 10%);
+      }
+    }
+
+  /******grid styles*******/
+  .app-grid {
+    .table {
+      thead {
+        th {
+          .header-data {
+            font-size: 0.917em;
+          }
+          .sort-buttons-container {
+            .sort-button {
+              .sort-icon {
+                  border-color: @component-active-color transparent;
+              }
+              .up {
+                border-width: 0 0.333em 0.333em;
+                bottom: -2px;
+              }
+              .down {
+                border-width: 0.333em 0.333em 0;
+                top: 0.250em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //carousel styling: removing the left and right background image
+  .carousel-control {
+    &.left, &.right {
+      background-image: none;
+    }
+  }
+
+/****panel classes****/
+  .panel-default {
+   .panel-heading {
+    .gradient-normal; //background-color
+   }
+  }
+/****accordion classes****/
+  .app-accordion {
+    .app-accordion-panel {
+      .panel-heading {
+        .panel-actions {
+          right: 1em;
+          top: 1.1em;
+        }
+      }
+    }
+  }
+
+  //file upload button
+  .app-single-file-upload {
+    .glyphicon {
+      margin-right: 0.500em;
+    }
+  }
+
+
+  /*Date, DateTime & Dropdown widgets*/
+  .app-calendar, .app-date, .app-datetime, .app-timeinput {
+     //setting the margin for the group button so that it shows up over the input
+    .input-group-btn:last-child {
+        > .btn, .btn-group {
+          margin-left: 0;
+        }
+    }
+    //setting the base font color for the popup content
+    .dropdown-menu {
+      color: @text-color;
+    }
+
+    thead {
+      tr {
+        th {
+          height: 2.5em;
+          button {
+            font-size: 1em;
+            background: @btn-default-bg;
+            border-color: transparent;
+            color: @btn-default-color;
+            padding: .56em .83em;
+          }
+        }
+      }
+    }
+
+    tbody {
+      .btn-default {
+        background-color: @component-active-color;
+        border-color: transparent;
+        color: @text-color;
+        width: auto;
+        box-shadow: none;
+        padding: 0.56em .83em;
+        &.btn-info {
+          background-color: @btn-info-bg;
+          color: @btn-info-color;
+        }
+        &:hover, &:focus &:active {
+          background-color: @component-active-bg;
+          color: @component-active-color;
+          border-color: @component-active-bg;
+          box-shadow: none;
+          .text-info {
+            color: inherit;
+          }
+        }
+        .text-info {
+          color: @brand-primary;
+        }
+      }
+    }
+
+    small {
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
+
+  //styling for the popup calendar actions
+  .app-date, .app-datetime {
+    .dropdown-menu {
+      li {
+        &:last-child {
+          border-top: 1px solid @input-border;
+          margin-top: 0.5em;
+          overflow: auto;
+        }
+      }
+    }
+  }
+
+  //Time Widget classes for styling the buttons
+  .app-timeinput, .app-datetime {
+    tbody {
+      .btn:not(.btn-link) {
+          border: 1px solid transparent;
+      }
+      .btn-link {
+        width: 100%;
+        background-color: transparent;
+        &:hover {
+          background-color: transparent;
+          color: @brand-primary;
+        }
+      }
+    }
+  }
+
+  //Calendar Specific
+  .app-calendar {
+    background-color: @component-active-color;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+    .fc {
+      .fc-state-default {
+        background: @btn-default-bg;
+        border: 1px solid @btn-default-border;
+        color: @btn-default-color;
+        text-shadow: none;
+        &.fc-state-hover, &:focus, &.fc-state-active {
+          color: @component-active-color;
+          background: @component-active-bg;
+          border: 1px solid @component-active-bg;
+        }
+      }
+    }
+    .fc-state-highlight {
+      &.fc-today {
+        background-color: @component-active-bg;
+        color: @component-active-color;
+      }
+    }
+    .fc {
+      .fc-toolbar {
+        h2 {
+          color: @text-color;
+        }
+      }
+    }
+    .fc-widget-header {
+      background-color: @body-bg;
+      color: @text-color;
+    }
+    .fc-body {
+      .fc-row {
+        min-height: 3em;
+        .fc-content-skeleton {
+          padding: .8em 0;
+          td {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+/*********************************************************************************************************************************************/
+/****************************************************Advanced editors******************************************************************************/
+/*********************************************************************************************************************************************/
+
+/*******rich-editor class*******/
+  .app-richtexteditor {
+    .btn-default {
+      background: @component-active-color;
+      border-color: @gray-light;
+      color: @text-color;
+      &.disabled, &[disabled], &.disabled:hover, &[disabled]:hover, &.disabled:focus, &[disabled]:focus,
+      &.disabled.focus, &.focus[disabled], &.disabled:active, &[disabled]:active, &.disabled.active, &.active[disabled],
+      &.disabled.active, &.active[disabled] {
+        background: @gray-lighter;
+        color: @text-color;
+      }
+      &:focus, &.active , &:active:hover  {
+         background-color: @component-active-bg;
+         color: @component-active-color;
+         border-color: @component-active-bg;
+      }
+    }
+
+    .ta-root .ta-toolbar .btn-group .btn {
+      height: 2.917em;
+      padding: 0.833em;
+    }
+  }
+
+  fieldset[disabled] {
+    .app-richtexteditor {
+      .btn-default, .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
+        background: @gray-lighter;
+        color: @text-color;
+      }
+    }
+  }
+
+  //Tree
+  .app-tree {
+    ul {
+      li {
+        span {
+          &:hover {
+            color: @text-color;
+          }
+        }
+        &.selected {
+          > i, > span {
+            color: @brand-primary;
+          }
+        }
+      }
+    }
+  }
+
+/***color picker class: adding the default size and padding to the addon*******/
+  .app-colorpicker {
+    &.input-group {
+      width: 13em;
+    }
+    .input-group-addon {
+      padding: 0.833em 1.333em;
+    }
+  }
+/*******popover class*******/
+ .popover {
+    min-width: 16.667em;
+    border-radius: @border-radius-large;
+    color: @text-color;
+    .popover-content {
+      padding: 0;
+    }
+    .btn-group > .btn {
+      &:hover, &:focus {
+        color: inherit;
+      }
+    }
+  }
+
+/*******file-uploader class*******/
+  .app-fileupload .app-multi-file-upload, .app-fileupload .app-single-file-upload {
+    height: auto;
+    min-height: 3em;
+  }
+
+  .app-files-upload-status {
+    padding-top: 0.833em;
+    &.multiple {
+      padding-top: 0.333em;
+      font-size: 1.2em;
+    }
+  }
+}

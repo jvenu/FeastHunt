@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Common",
+    "type": "PARTIAL"
+  },
+  {
+    "name": "Login",
+    "type": "PAGE"
+  },
+  {
+    "name": "Main",
+    "type": "PAGE"
+  },
+  {
+    "name": "footer",
+    "type": "FOOTER"
+  },
+  {
+    "name": "header",
+    "type": "HEADER"
+  },
+  {
+    "name": "leftnav",
+    "type": "LEFTNAV"
+  },
+  {
+    "name": "rightnav",
+    "type": "RIGHTNAV"
+
+  },
+  {
+    "name": "topnav",
+    "type": "TOPNAV"
+  }
+]

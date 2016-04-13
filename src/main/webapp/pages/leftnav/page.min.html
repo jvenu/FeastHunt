@@ -1,0 +1,43 @@
+<style id="leftnav.css">
+
+</style>
+<script id="leftnav.js">
+Application.$controller("leftnavPageController", ["$scope", function($scope) {
+    "use strict";
+
+    /* perform any action on widgets/variables within this block */
+    $scope.onPageReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
+         * $scope.Variables.loggedInUser.getData()
+         * 
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. to get value of text widget named 'username' use following script
+         * '$scope.Widgets.username.datavalue'
+         */
+    };
+
+}]);
+</script>
+<script id="leftnav.variables.json">
+var _leftnavPage_Variables_ ={};
+</script>
+<script id="leftnav.html" type="text/ng-template">
+<wm-partial data-ng-controller="leftnavPageController" name="leftnav" type="leftnav">
+    <wm-nav name="leftnavigation" type="pills" layout="stacked">
+        <wm-nav-item name="list_latestUpdate">
+            <wm-anchor caption="Dashboard" name="dashboardLink" iconclass="glyphicon glyphicon-dashboard"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_inTheNews">
+            <wm-anchor caption="Pending Orders" name="porderLink" iconclass="glyphicon glyphicon-file"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_share">
+            <wm-anchor caption="Inventory" name="inventoryLink" iconclass="glyphicon glyphicon-tags"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_help">
+            <wm-anchor caption="Support Calls" name="supportLink" iconclass="glyphicon glyphicon-envelope"></wm-anchor>
+        </wm-nav-item>
+    </wm-nav>
+</wm-partial>
+</script>

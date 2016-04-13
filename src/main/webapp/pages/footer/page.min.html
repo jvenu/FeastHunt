@@ -1,0 +1,39 @@
+<style id="footer.css">
+
+</style>
+<script id="footer.js">
+Application.$controller("footerPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action on widgets/variables within this block */
+    $scope.onPageReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
+         * $scope.Variables.loggedInUser.getData()
+         * 
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. to get value of text widget named 'username' use following script
+         * '$scope.Widgets.username.datavalue'
+         */
+    };
+
+}]);
+</script>
+<script id="footer.variables.json">
+var _footerPage_Variables_ ={};
+</script>
+<script id="footer.html" type="text/ng-template">
+<wm-partial data-ng-controller="footerPageController" name="footer" type="footer">
+    <wm-layoutgrid height="auto" name="footerlayout">
+        <wm-gridrow name="footerrow">
+            <wm-gridcolumn name="footerleft" verticalalign="bottom">
+                <wm-label caption="Powered by WaveMaker" textalign="left" name="poweredby"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn horizontalalign="right" verticalalign="bottom" name="footerright">
+                <wm-label caption="Copyright 2016 [company name]" textalign="right" name="copyright"></wm-label>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>
+</script>

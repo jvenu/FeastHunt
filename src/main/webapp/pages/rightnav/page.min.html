@@ -1,0 +1,40 @@
+<style id="rightnav.css">
+
+</style>
+<script id="rightnav.js">
+Application.$controller("rightnavPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action on widgets/variables within this block */
+    $scope.onPageReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
+         * $scope.Variables.loggedInUser.getData()
+         * 
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. to get value of text widget named 'username' use following script
+         * '$scope.Widgets.username.datavalue'
+         */
+    };
+
+}]);
+</script>
+<script id="rightnav.variables.json">
+var _rightnavPage_Variables_ ={};
+</script>
+<script id="rightnav.html" type="text/ng-template">
+<wm-partial data-ng-controller="rightnavPageController" name="rightnav" type="rightnav">
+    <wm-nav name="rightnav" type="pills" layout="stacked">
+        <wm-nav-item name="list_task">
+            <wm-anchor caption="Tasks" name="taskLink"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_directory">
+            <wm-anchor caption="Directory" name="directoryLink"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_people">
+            <wm-anchor caption="People" name="peopleLink"></wm-anchor>
+        </wm-nav-item>
+    </wm-nav>
+</wm-partial>
+</script>

@@ -1,0 +1,121 @@
+<style id="Login.css">
+
+</style>
+<script id="Login.js">
+Application.$controller("LoginPageController", ["$scope",
+    function ($scope) {
+        "use strict";
+
+        /* perform any action on widgets/variables within this block */
+        $scope.onPageReady = function () {
+            /*
+             * variables can be accessed through '$scope.Variables' property here
+             * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
+             * $scope.Variables.loggedInUser.getData()
+             * 
+             * widgets can be accessed through '$scope.Widgets' property here
+             * e.g. to get value of text widget named 'username' use following script
+             * '$scope.Widgets.username.datavalue'
+             */
+        };
+    }
+]);
+
+Application.$controller("loginFormController", ["$scope",
+    function ($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+</script>
+<script id="Login.variables.json">
+var _LoginPage_Variables_ ={
+	"loginVariable": {
+		"_id": "wm-loginVariable-wm.LoginVariable-1398237232072",
+		"name": "loginVariable",
+		"owner": "Page",
+		"category": "wm.LoginVariable",
+		"dataSet": {
+			"username": "",
+			"password": ""
+		},
+		"dataBinding": [
+            {
+                "target": "username",
+                "value": "bind:Widgets.usernametext.datavalue",
+                "type": "string"
+            },
+            {
+                "target": "password",
+                "value": "bind:Widgets.passwordtext.datavalue",
+                "type": "string"
+            },
+			{
+				"target": "rememberme",
+				"value": "bind:Widgets.remembermecheck.datavalue",
+				"type": "boolean"
+			}
+        ],
+		"type": "string",
+		"saveInPhonegap": false,
+		"startUpdate": false,
+		"autoUpdate": false,
+		"onError": "Javascript",
+		"useDefaultSuccessHandler": true
+	}
+}
+</script>
+<script id="Login.html" type="text/ng-template">
+<wm-page layouttype="one-column" columns="1" data-ng-controller="LoginPageController" name="page1" pagetitle="Login">
+    <wm-header height="auto" name="header">
+        <wm-layoutgrid name="headerlayout" height="6em">
+            <wm-gridrow name="headerrow">
+                <wm-gridcolumn name="headerleft" verticalalign="middle" columnwidth="12">
+                    <wm-picture picturesource="resources/images/logos/logo.png" name="AppLogo" marginleft="5"></wm-picture>
+                    <wm-label caption="FeastHunt" class="application-name" name="AppName" fontsize="20"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-header>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="column1">
+            <wm-layoutgrid name="loginGrid" height="auto">
+                <wm-gridrow name="loginGridRow" height="100%">
+                    <wm-gridcolumn name="paddingColumnLeft" columnwidth="4"></wm-gridcolumn>
+                    <wm-gridcolumn name="loginContentColumn" columnwidth="4" horizontalalign="left">
+                        <wm-tile name="loginPanel" horizontalalign="left" backgroundcolor="#e3e3e3" bordercolor="#b8b8b8" borderstyle="solid" bordertop="1" borderright="1" borderleft="1" borderbottom="1" height="auto" width="100%" margintop="20" marginbottom="20" marginunit="%">
+                            <wm-login name="loginForm" data-ng-controller="loginFormController" on-submit="loginVariable">
+                                <wm-composite name="userNameField">
+                                    <wm-label caption="Username" name="userNameLabel" class="control-label"></wm-label>
+                                    <wm-text placeholder="Enter username" name="usernametext" class="app-login-username" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="default" required="true"></wm-text>
+                                </wm-composite>
+                                <wm-composite name="passwordField">
+                                    <wm-label caption="Password" name="passwordLabel" class="control-label"></wm-label>
+                                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="default" required="true"></wm-text>
+                                </wm-composite>
+                                <wm-button type="submit" caption="Sign in" width="100%" class="app-login-button btn-primary" name="loginButton"></wm-button>
+                                <wm-composite name="remembermeField" class="app-login-rememberme">
+                                    <wm-checkbox caption="Remember Me" name="remembermecheck"></wm-checkbox>
+                                </wm-composite>
+                                </wm-login>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="paddingColumnRight" columnwidth="4"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer">
+        <wm-layoutgrid height="60" name="footerlayout">
+            <wm-gridrow name="footerrow">
+                <wm-gridcolumn name="footerleft" verticalalign="bottom">
+                    <wm-label caption="Powered by WaveMaker" textalign="left" name="poweredby"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn horizontalalign="right" verticalalign="bottom" name="footerright">
+                    <wm-label caption="Copyright 2016 [company name]" textalign="right" name="copyright"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-footer>
+</wm-page>
+</script>
